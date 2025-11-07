@@ -1,0 +1,232 @@
+/* Font and page setup */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: white;
+  min-height: 100vh;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8em;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  margin-top: 120px;
+}
+
+.hero h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5em;
+  color: #00ffff;
+  text-shadow: 0 0 15px #00ffff;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background: #00ffff;
+  color: black;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: white;
+  color: #00ffff;
+  box-shadow: 0 0 20px #00ffff;
+}
+/* Shared content page styling */
+.content {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.content h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 1.1em;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+/* Project cards */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #00ffff;
+}
+
+/* Contact form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 80%;
+  max-width: 400px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1em;
+  outline: none;
+}
+
+.contact-form button {
+  margin-top: 10px;
+}
+/* 🔥 Glowing Hover Animations */
+.btn, .nav-links a, .project-card {
+  transition: all 0.3s ease;
+}
+
+.btn:hover, .nav-links a:hover, .project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00ffff;
+}
+
+/* 💡 Fade-in Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ✨ Apply the fade-in to sections */
+.hero, .content, .project-grid, .contact-form {
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+/* Small delay for cool effect */
+.hero { animation-delay: 0.2s; }
+.content { animation-delay: 0.4s; }
+.project-grid { animation-delay: 0.6s; }
+.contact-form { animation-delay: 0.8s; }
+
+/* 🌈 Glowing background animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body {
+  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #00ffff);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+/* ⚡ LOADING SCREEN */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #0f0c29, #302b63, #24243e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeOutLoader 1s ease forwards;
+  animation-delay: 2.5s;
+}
+
+.loader-logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3em;
+  color: #00ffff;
+  text-shadow: 0 0 25px #00ffff;
+  animation: pulseGlow 2s infinite;
+  .loader-logo img {
+  width: 220px;
+  animation: pulseGlow 2s infinite;
+  filter: drop-shadow(0 0 25px #ff0000);
+}
+
+}
+
+/* Pulse animation for the glowing logo */
+@keyframes pulseGlow {
+  0% { text-shadow: 0 0 10px #00ffff; }
+  50% { text-shadow: 0 0 30px #00ffff; }
+  100% { text-shadow: 0 0 10px #00ffff; }
+}
+
+/* Loader fade out after animation */
+@keyframes fadeOutLoader {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
